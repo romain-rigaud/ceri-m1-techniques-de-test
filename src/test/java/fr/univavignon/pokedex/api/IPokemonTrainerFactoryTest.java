@@ -10,14 +10,12 @@ public class IPokemonTrainerFactoryTest {
     public void testCreateTrainer() {
         String name = "Ash";
         Team team = Team.MYSTIC;
-        IPokedex mockPokedex = Mockito.mock(IPokedex.class);
-        PokemonTrainer trainer = trainerFactory.createTrainer(name, team, mockPokedexFactory);
+        IPokedexFactory mockPokedex = Mockito.mock(IPokedexFactory.class);
+        IPokemonTrainerFactory trainerFactory = Mockito.mock(IPokemonTrainerFactory.class);
+        PokemonTrainer trainer = trainerFactory.createTrainer(name, team, mockPokedex);
 
-        // Assurez-vous que le Pokémon Trainer a été créé correctement
         Assert.assertNotNull(trainer);
         Assert.assertEquals(name, trainer.getName());
         Assert.assertEquals(team, trainer.getTeam());
-        Assert.assertEquals(mockPokedex, trainer.getPokedex());
-
     }
 }

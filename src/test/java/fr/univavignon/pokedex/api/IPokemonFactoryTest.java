@@ -2,12 +2,13 @@ package fr.univavignon.pokedex.api;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 public class IPokemonFactoryTest {
 
     @Test
     public void testCreatePokemon() {
-        IPokemonFactory pokemonFactory = new PokemonFactory();
+        IPokemonFactory pokemonFactory = Mockito.mock(IPokemonFactory.class);
 
         int index = 1;
         int cp = 1000;

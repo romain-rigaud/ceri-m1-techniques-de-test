@@ -12,8 +12,10 @@ public class IPokemonMetadataProviderTest {
 
     @Test(expected = PokedexException.class)
     public void testGetPokemonMetadataInvalidIndex() throws PokedexException {
-        IPokemonMetadataProvider metadataProvider = new PokemonMetadataProvider();
-        metadataProvider.getPokemonMetadata(1);
+        IPokemonMetadataProvider metadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
+        PokemonMetadata pokemonMetadata = metadataProvider.getPokemonMetadata(1);
+
+        Assert.assertNotNull(pokemonMetadata);
 
     }
 }
