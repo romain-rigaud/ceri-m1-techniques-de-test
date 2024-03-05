@@ -35,13 +35,13 @@ jobs:
           command: mvn jacoco:report
 
       - run:
-          name: upload
+          name: upload-to-codecov
           command: bash <(curl -s https:://codecov.io/bash)
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
-  upload:
+  upload-to-codecov:
     jobs:
       - build
   sample: # This is the name of the workflow, feel free to change it to better match your workflow.
