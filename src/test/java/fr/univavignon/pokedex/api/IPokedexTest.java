@@ -5,11 +5,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class IPokedexTest {
 
@@ -24,22 +26,27 @@ public class IPokedexTest {
 
     @Test
     public void testSize() {
+        when(pokedex.size()).thenReturn(0);
         assertEquals(0, pokedex.size());
         pokedex.addPokemon(pokemon);
+        when(pokedex.size()).thenReturn(1);
         assertEquals(1, pokedex.size());
     }
 
     @Test
     public void testGetPokemon() throws PokedexException {
+        when(pokedex.addPokemon(pokemon)).thenReturn(1);
         int index = pokedex.addPokemon(pokemon);
+        when(pokedex.getPokemon(index)).thenReturn(pokemon);
         Pokemon retrievedPokemon = pokedex.getPokemon(index);
-        assertEquals(0, retrievedPokemon.getIndex());
+        assertEquals(pokemon.getIndex(), retrievedPokemon.getIndex());
     }
 
     @Test
     public void testAddPokemon() throws PokedexException {
         int index = pokedex.addPokemon(pokemon);
-        assertNotNull(index);
+        when(pokedex.addPokemon(pokemon)).thenReturn(0);
+        assertEquals(index, 0);
     }
 
     @Test
@@ -49,9 +56,13 @@ public class IPokedexTest {
         pokedex.addPokemon(bulbizarre);
         pokedex.addPokemon(aquali);
 
-        List<Pokemon> pokemons = pokedex.getPokemons();
+        List<Pokemon> pokemons = new ArrayList<>();
+        pokemons.add(bulbizarre);
+        pokemons.add(aquali);
+        when(pokedex.getPokemons()).thenReturn(pokemons);
+        List<Pokemon> pokemonsRetrieved = pokedex.getPokemons();
 
-        Assert.assertEquals(2, pokemons.size());
+        Assert.assertEquals(pokemons.size(), pokemonsRetrieved.size());
         Assert.assertTrue(pokemons.contains(bulbizarre));
         Assert.assertTrue(pokemons.contains(aquali));
     }

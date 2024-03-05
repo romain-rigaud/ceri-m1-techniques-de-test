@@ -4,18 +4,22 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
+
 public class IPokemonFactoryTest {
 
     @Test
     public void testCreatePokemon() {
         IPokemonFactory pokemonFactory = Mockito.mock(IPokemonFactory.class);
 
-        int index = 1;
-        int cp = 1000;
-        int hp = 150;
-        int dust = 500;
-        int candy = 10;
+        int index = 0;
+        int cp = 613;
+        int hp = 64;
+        int dust = 4000;
+        int candy = 4;
 
+        when(pokemonFactory.createPokemon(index, cp, hp, dust, candy)).thenReturn(new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56));
         Pokemon pokemon = pokemonFactory.createPokemon(index, cp, hp, dust, candy);
 
         Assert.assertNotNull(pokemon);

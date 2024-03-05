@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class IPokedexFactoryTest {
 
@@ -15,6 +16,7 @@ public class IPokedexFactoryTest {
         IPokemonFactory pokemonFactory = Mockito.mock(IPokemonFactory.class);
         IPokedexFactory pokedexFactory = Mockito.mock(IPokedexFactory.class);
 
+        when(pokedexFactory.createPokedex(metadataProvider, pokemonFactory)).thenReturn(mock(IPokedex.class));
         IPokedex pokedex = pokedexFactory.createPokedex(metadataProvider, pokemonFactory);
 
         Assert.assertNotNull(pokedex);
