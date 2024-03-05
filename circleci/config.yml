@@ -47,6 +47,8 @@ workflows:
   upload-to-codecov:
     jobs:
       - test-and-upload-python
+      - checkout
+      - codecov/upload
   sample: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
     jobs:
