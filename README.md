@@ -1,5 +1,7 @@
 # UCE Génie Logiciel Avancé : Techniques de tests
 
+[![codecov](https://codecov.io/gh/romain-rigaud/TP1/graph/badge.svg?token=UYDU3VVTO1)](https://codecov.io/gh/romain-rigaud/TP1)
+
 ## Introduction
 
 Vous allez à travers ces projet mettre en application une partie des aspects évoqués en cours vis à vis des techniques de tests.  
