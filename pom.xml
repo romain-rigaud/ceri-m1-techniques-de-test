@@ -117,5 +117,10 @@ http://maven.apache.org/maven-v4_0_0.xsd"
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.github.bordertech.buildtools</groupId>
+            <artifactId>badger</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 </project>
