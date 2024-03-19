@@ -9,4 +9,4 @@
 
 [![CircleCI](https://circleci.com/gh/romain-rigaud/ceri-m1-techniques-de-test.svg?style=svg)](https://app.circleci.com/pipelines/github/romain-rigaud)
 
-![Checkstyle](target/site/badges/checkstyle.svg)
+![Checkstyle](target/site/badges/checkstyle-result.svg)
