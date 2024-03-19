@@ -5,13 +5,5 @@
 
 <module name="Checker">
     <module name="WhitespaceAround">
-        <property name="allowEmptyConstructors" value="true"/>
-        <property name="allowEmptyMethods" value="true"/>
     </module>
-
-    <module name="LineLength">
-        <property name="max" value="120"/>
-        <property name="ignorePattern" value="^import\s.*"/>
-    </module>
-
 </module>
