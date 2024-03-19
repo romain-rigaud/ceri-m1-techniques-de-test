@@ -95,7 +95,6 @@ http://maven.apache.org/maven-v4_0_0.xsd"
                             <goal>badges</goal>
                         </goals>
                         <configuration>
-                            <skip>${badges.skip}</skip>
                             <outputDir>target/site/badges</outputDir>
                             <inputFiles>
                                 <inputFile>target/checkstyle-result.xml</inputFile>
