@@ -24,17 +24,11 @@ jobs:
           name: Upload Coverage Report
           command: bash <(curl -s https://codecov.io/bash)
       - run:
-          name: Install dependencies
-          command: pip install -r requirements.txt
-      - run:
-          name: Test
-          command: pytest
+          name: Generate javadoc
+          command: mvm javadoc:javadoc
 
 workflows: # Définition des workflows
   version: 2
-  build:
-    jobs:
-      - test
   upload-to-codecov:
     jobs:
       - build
