@@ -66,7 +66,7 @@ http://maven.apache.org/maven-v4_0_0.xsd"
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>3.1.2</version>
+                <version>3.1.1</version>
                 <executions>
                     <execution>
                         <id>validate</id>
@@ -76,6 +76,13 @@ http://maven.apache.org/maven-v4_0_0.xsd"
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                    <encoding>UTF-8</encoding>
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>true</failsOnError>
+                    <linkXRef>false</linkXRef>
+                </configuration>
             </plugin>
         </plugins>
     </build>
