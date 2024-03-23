@@ -10,7 +10,7 @@ import static org.mockito.Mockito.when;
 public class IPokemonFactoryTest {
 
     @Test
-    public void testCreatePokemon() {
+    public void testCreatePokemon() throws PokedexException {
 //        IPokemonFactory pokemonFactory = Mockito.mock(IPokemonFactory.class);
 //
 //        int index = 0;

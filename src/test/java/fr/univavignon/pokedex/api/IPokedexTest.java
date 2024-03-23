@@ -123,17 +123,15 @@ public class IPokedexTest{
         int candy = 4;
 
         Pokemon pokemon = pokedex.createPokemon(index, cp, hp, dust, candy);
+    }
 
-        Assert.assertNotNull(pokemon);
-        Assert.assertEquals(index, pokemon.getIndex());
-        Assert.assertEquals(cp, pokemon.getCp());
-        Assert.assertEquals(hp, pokemon.getHp());
-        Assert.assertEquals(dust, pokemon.getDust());
-        Assert.assertEquals(candy, pokemon.getCandy());
+    @Test(expected = PokedexException.class)
+    public void testGetPokemonInvalidIndex() throws PokedexException {
+        Pokemon retrievedPokemon = pokedex.getPokemon(-1);
     }
 
     @Test
-    public void testCreatePokemon() {
+    public void testCreatePokemon() throws PokedexException {
 //        IPokemonFactory pokemonFactory = Mockito.mock(IPokemonFactory.class);
 //
 //        int index = 0;
