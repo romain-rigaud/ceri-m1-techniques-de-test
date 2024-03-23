@@ -116,10 +116,20 @@ public class IPokedexTest{
 //        when(metadataProvider.getPokemonMetadata(-1)).thenThrow(new PokedexException("Index invalide"));
 //        PokemonMetadata pokemonMetadata = metadataProvider.getPokemonMetadata(-1);
 
-        IPokemonMetadataProvider metadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
+        int index = -1;
+        int cp = 613;
+        int hp = 64;
+        int dust = 4000;
+        int candy = 4;
 
-        when(metadataProvider.getPokemonMetadata(-1)).thenThrow(new PokedexException("Index invalide"));
-        PokemonMetadata pokemonMetadata = metadataProvider.getPokemonMetadata(-1);
+        Pokemon pokemon = pokedex.createPokemon(index, cp, hp, dust, candy);
+
+        Assert.assertNotNull(pokemon);
+        Assert.assertEquals(index, pokemon.getIndex());
+        Assert.assertEquals(cp, pokemon.getCp());
+        Assert.assertEquals(hp, pokemon.getHp());
+        Assert.assertEquals(dust, pokemon.getDust());
+        Assert.assertEquals(candy, pokemon.getCandy());
     }
 
     @Test
