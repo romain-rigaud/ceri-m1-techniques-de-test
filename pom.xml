@@ -113,6 +113,7 @@ http://maven.apache.org/maven-v4_0_0.xsd"
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
+                        <phase>validate</phase>
                         <goals>
                             <goal>jar</goal>
                         </goals>
