@@ -29,6 +29,8 @@ public class IPokemonFactoryTest {
 //        Assert.assertEquals(dust, pokemon.getDust());
 //        Assert.assertEquals(candy, pokemon.getCandy());
 
+        IPokemonFactory iPokemonFactory = Mockito.mock(IPokemonFactory.class);
 
+        Assert.assertNull(iPokemonFactory.createPokemon(133,2729,202,5000,4));
     }
 }
