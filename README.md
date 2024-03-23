@@ -1,9 +1,6 @@
 # UCE Génie Logiciel Avancé : Techniques de tests
 
-[![codecov](https://codecov.io/gh/romain-rigaud/TP1/graph/badge.svg?token=UYDU3VVTO1)](https://codecov.io/gh/romain-rigaud/TP1)
-
- Voir 'target/site/index.html' pour voir le coverage, et le lancer avec un navigateur :
-[index.html](target/site/jacoco/index.html)
+[![codecov](https://codecov.io/gh/romain-rigaud/ceri-m1-techniques-de-test/graph/badge.svg?token=5IDWTSBHVA)](https://codecov.io/gh/romain-rigaud/ceri-m1-techniques-de-test)
 
 ## Rigaud Romain, groupe 2 alternance ILSEN
 

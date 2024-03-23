@@ -31,7 +31,7 @@ jobs:
           command: mvn javadoc:javadoc
       - run:
           name: Install gh-pages
-          command: npm install -g gh-pages@2.0.1
+          command: sudo npm install -g --silent gh-pages@2.0.1
       - run:
           name: Install and configure dependencies
           command: |
