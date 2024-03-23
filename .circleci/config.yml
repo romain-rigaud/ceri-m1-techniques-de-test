@@ -30,6 +30,9 @@ jobs:
           name: Generate Javadoc
           command: mvn javadoc:javadoc
       - run:
+          name: Install gh-pages
+          command: npm install -g gh-pages@2.0.1
+      - run:
           name: Install and configure dependencies
           command: |
             git config user.email "romain.rigaud@alumni.univ-avignon.fr"
