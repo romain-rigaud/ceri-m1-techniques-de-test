@@ -37,6 +37,7 @@ jobs:
           command: |
             git config user.email "romain.rigaud@alumni.univ-avignon.fr"
             git config user.name "romain-rigaud"
+            mkdir -p docs/_build/html
       - run:
           name: Deploy docs to gh-pages branch
           command: gh-pages --dist docs/_build/html
