@@ -15,6 +15,9 @@ jobs:
 
       # Exécution des tests unitaires avec Maven
       - run:
+          name: Build
+          command: mvn -B -DskipTests clean package
+      - run:
           name: Run Unit Tests
           command: mvn test -X
       - run:
