@@ -49,7 +49,7 @@ public class Pokedex implements IPokedex {
 
     @Override
     public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
-        if (index < 0 || index >= pokemonList.size()) {
+        if (index < 0) {
             throw new PokedexException("Invalid Pokemon index: " + index);
         }
         Pokemon pokemon = pokemonList.get(index);
