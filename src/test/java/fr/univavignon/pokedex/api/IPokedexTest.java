@@ -142,7 +142,6 @@ public class IPokedexTest{
 //        Assert.assertEquals(dust, pokemon.getDust());
 //        Assert.assertEquals(candy, pokemon.getCandy());
 
-        IPokemonFactory pokemonFactory = Mockito.mock(IPokemonFactory.class);
 
         int index = 0;
         int cp = 613;
@@ -150,7 +149,7 @@ public class IPokedexTest{
         int dust = 4000;
         int candy = 4;
 
-        Pokemon pokemon = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
+        Pokemon pokemon = pokedex.createPokemon(index, cp, hp, dust, candy);
 
         Assert.assertNotNull(pokemon);
         Assert.assertEquals(index, pokemon.getIndex());
@@ -158,5 +157,8 @@ public class IPokedexTest{
         Assert.assertEquals(hp, pokemon.getHp());
         Assert.assertEquals(dust, pokemon.getDust());
         Assert.assertEquals(candy, pokemon.getCandy());
+
+
+
     }
 }
