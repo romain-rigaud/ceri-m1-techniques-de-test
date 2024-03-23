@@ -42,6 +42,16 @@ jobs:
 workflows: # Définition des workflows
   version: 2
   build:
+    jobs:
+      - test
+      - docs-build
+      - docs-deploy:
+          requires:
+            - test
+            - docs-build
+          filters:
+            branches:
+              only: master
   upload-to-codecov:
     jobs:
       - build
