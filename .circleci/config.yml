@@ -36,14 +36,12 @@ jobs:
           command: |
             git config user.email "romain.rigaud@alumni.univ-avignon.fr"
             git config user.name "romain-rigaud"
-            mkdir /home/circleci/project/doc
       - add_ssh_keys:
           fingerprints:
             - "SHA256:XXHOJDShDv1IAs7w99mSL8cFHFCd9gVxO4CdheuKhC8"
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages --dotfiles --message "[skip ci] Updates" --dist doc
-
+          command: gh-pages --dist docs/_build/html
 
 workflows:
   version: 2
