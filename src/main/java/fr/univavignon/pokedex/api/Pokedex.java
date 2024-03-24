@@ -7,13 +7,15 @@ import java.util.List;
 public class Pokedex implements IPokedex {
 
     private List<Pokemon> pokemonList;
-
-    public Pokedex() {
-        this.pokemonList = new ArrayList<>();
-    }
+    private PokemonMetadataProvider metadataProvider;
+    private PokemonFactory PokemonFactory;
 
     public Pokedex(List<Pokemon> pokemonList) {
         this.pokemonList = pokemonList;
+    }
+    public Pokedex(PokemonMetadataProvider metadataProvider, PokemonFactory pokemonFactory) {
+        this.metadataProvider = metadataProvider;
+        this.PokemonFactory = PokemonFactory;
     }
 
     @Override

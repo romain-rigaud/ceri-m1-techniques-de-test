@@ -21,8 +21,8 @@ public class IPokedexFactoryTest {
 //
 //        Assert.assertNotNull(pokedex);
 
-        IPokedexFactory iPokedexFactory = Mockito.mock(IPokedexFactory.class);
-        Assert.assertNull(iPokedexFactory.createPokedex(Mockito.mock(IPokemonMetadataProvider.class), Mockito.mock(IPokemonFactory.class)));
+        IPokedexFactory iPokedexFactory = new PokedexFactory();
+        Assert.assertNotNull(iPokedexFactory.createPokedex(Mockito.mock(PokemonMetadataProvider.class), Mockito.mock(PokemonFactory.class)));
 
     }
 }
