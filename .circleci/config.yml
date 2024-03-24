@@ -41,7 +41,7 @@ jobs:
             - "SHA256:XXHOJDShDv1IAs7w99mSL8cFHFCd9gVxO4CdheuKhC8"
       - run:
           name: Deploy docs to gh-pages branch
-          command: sudo gh-pages --dist docs/_build/html
+          command: gh-pages --dotfiles --message "[skip ci] Updates" --dist docs/_build/html
 
 workflows:
   version: 2
