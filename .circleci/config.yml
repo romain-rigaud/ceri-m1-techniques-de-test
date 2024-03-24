@@ -30,9 +30,9 @@ jobs:
           command: mvn javadoc:javadoc
       - attach_workspace:
           at: docs/_build
-            - run:
-                name: Disable jekyll builds
-                command: touch docs/_build/html/.nojekyll
+      - run:
+          name: Disable jekyll builds
+          command: touch docs/_build/html/.nojekyll
       - run:
           name: Install gh-pages
           command: sudo npm install -g --silent gh-pages@2.0.1
