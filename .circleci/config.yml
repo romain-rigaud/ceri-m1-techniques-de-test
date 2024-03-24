@@ -38,7 +38,7 @@ jobs:
             git config user.name "romain-rigaud"
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages --dist docs/_build/html
+          command: sudo gh-pages --dist docs/_build/html
 
 workflows:
   version: 2
