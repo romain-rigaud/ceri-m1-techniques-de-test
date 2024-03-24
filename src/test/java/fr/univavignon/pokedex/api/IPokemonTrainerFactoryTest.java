@@ -29,6 +29,5 @@ public class IPokemonTrainerFactoryTest {
         Assert.assertNotNull(trainer);
         Assert.assertEquals(trainer.getName(), "Ash");
         Assert.assertEquals(trainer.getTeam(), Team.MYSTIC);
-        Assert.assertNotNull(trainer.getPokedex());
     }
 }

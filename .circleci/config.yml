@@ -8,12 +8,11 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/openjdk:17-ea-buster-node-browsers-legacy  # Utilisation de l'image Docker avec Java 17
+      - image: circleci/openjdk:17-ea-buster-node-browsers-legacy
 
     steps:
-      - checkout  # Récupère le code source du dépôt
+      - checkout
 
-      # Exécution des tests unitaires avec Maven
       - run:
           name: Build
           command: mvn -B -DskipTests clean package
@@ -41,7 +40,7 @@ jobs:
           name: Deploy docs to gh-pages branch
           command: gh-pages --dist docs/_build/html
 
-workflows: # Définition des workflows
+workflows:
   version: 2
   upload-to-codecov:
     jobs:
