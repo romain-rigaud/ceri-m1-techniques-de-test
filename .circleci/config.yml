@@ -34,10 +34,10 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: docs/.nojekyll
+          at: docs/
       - run:
           name: Disable jekyll builds
-          command: touch docs/
+          command: touch docs/.nojekyll
       - run:
           name: Install and configure dependencies
           command: |
