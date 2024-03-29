@@ -28,29 +28,25 @@ jobs:
       - run:
           name: Generate Javadoc
           command: mvn javadoc:javadoc
-      - attach_workspace:
-          at: docs/_build
-      - run:
-          name: Disable jekyll builds
-          command: | 
-            mkdir -p docs/_build/html/
-            touch docs/_build/html/.nojekyll
-      - attach_workspace:
-          at: docs/_build
-      - run:
-          name: Install gh-pages
-          command:  npm install -g --silent gh-pages@2.0.1
-      - run:
-          name: Install and configure dependencies
-          command: |
-            git config user.email "romain.rigaud@alumni.univ-avignon.fr"
-            git config user.name "romain-rigaud"
-      - add_ssh_keys:
-          fingerprints:
-            - "SHA256:BKAN23pTIn06S/SpVkBi3gW+9gt4yKBvsURwiumCaCY"
-      - run:
-          name: Deploy docs to gh-pages branch
-          command: gh-pages --dist docs/
+    docs-deploy:
+      docker:
+        - image: node:8.10.0
+      steps:
+        - checkout
+        - attach_workspace:
+            at: docs/
+        - run:
+            name: Install and configure dependencies
+            command: |
+              npm install -g --silent gh-pages@2.0.1
+              git config user.email "romain.rigaud@alumni.univ-avignon.fr"
+              git config user.name "romain-rigaud"
+        - add_ssh_keys:
+            fingerprints:
+              - "SHA256:BKAN23pTIn06S/SpVkBi3gW+9gt4yKBvsURwiumCaCY"
+        - run:
+            name: Deploy docs to gh-pages branch
+            command: gh-pages --dist docs/
 
 workflows:
   version: 2
