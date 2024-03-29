@@ -38,17 +38,20 @@ jobs:
       - run:
           name: Install gh-pages
           command: sudo npm install -g --silent gh-pages@2.0.1
+      - attach_workspace:
+          at: docs/
       - run:
           name: Install and configure dependencies
           command: |
-            git config user.email "romain.rigaud@alumni.univ-avignon.fr"
-            git config user.name "romain-rigaud"
+            npm install -g --silent gh-pages@2.0.1
+            git config user.email "lyes.douki@alumni.univ-avignon.fr"
+            git config user.name "lyesdki"
       - add_ssh_keys:
           fingerprints:
             - "SHA256:XXHOJDShDv1IAs7w99mSL8cFHFCd9gVxO4CdheuKhC8"
       - run:
           name: Deploy docs to gh-pages branch
-          command: gh-pages --dotfiles --message "[skip ci] Updates" --dist docs/_build/html
+          command: gh-pages --dist docs/
 
 workflows:
   version: 2
