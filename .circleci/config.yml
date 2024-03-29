@@ -43,7 +43,7 @@ jobs:
             git config user.name "romain-rigaud"
       - add_ssh_keys:
           fingerprints:
-            - "SHA256:ydwMp9Q0qd9Hmc6WNqC4c/eMRTO6EsW3muHgCxFlwCs"
+            - "SHA256:fq8dh69/05SOWefTLds8m9+uj+mz3DkftkCQkrkMkdc"
       - run:
           name: Deploy docs to gh-pages branch
           command: gh-pages --dist docs/
