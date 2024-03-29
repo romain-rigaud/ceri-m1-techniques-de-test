@@ -54,12 +54,20 @@ jobs:
 
 workflows:
   version: 2
-  upload-to-codecov:
-    jobs:
-      - build
   maven_test:
     jobs:
       - build:
+          filters:
+            branches:
+              only: master
+  build:
+    jobs:
+      - test
+      - docs-build
+      - docs-deploy:
+          requires:
+            - test
+            - docs-build
           filters:
             branches:
               only: master
