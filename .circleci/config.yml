@@ -43,7 +43,6 @@ jobs:
       - run:
           name: Install and configure dependencies
           command: |
-            npm install -g --silent gh-pages@2.0.1
             git config user.email "romain.rigaud@alumni.univ-avignon.fr"
             git config user.name "romain-rigaud"
       - add_ssh_keys:
