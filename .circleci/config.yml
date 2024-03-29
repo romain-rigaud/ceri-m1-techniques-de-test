@@ -47,7 +47,6 @@ jobs:
       - run:
           name: Deploy docs to gh-pages branch
           command: gh-pages --dist docs/
-
 workflows:
   version: 2
   maven_test:
