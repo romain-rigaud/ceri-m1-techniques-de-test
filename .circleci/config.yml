@@ -62,11 +62,9 @@ workflows:
               only: master
   build:
     jobs:
-      - test
       - docs-build
       - docs-deploy:
           requires:
-            - test
             - docs-build
           filters:
             branches:
