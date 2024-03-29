@@ -32,7 +32,7 @@ jobs:
           at: docs/_build
       - run:
           name: Disable jekyll builds
-          command: |
+          command: | 
             mkdir -p docs/_build/html/
             touch docs/_build/html/.nojekyll
       - attach_workspace:
