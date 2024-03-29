@@ -27,7 +27,7 @@ jobs:
           command: bash <(curl -s https://codecov.io/bash)
       - run:
           name: Generate Javadoc
-          command: mvm javadoc:javadoc
+          command: mvn javadoc:javadoc
       - persist_to_workspace:
           root: docs
           paths:
