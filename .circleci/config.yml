@@ -35,9 +35,6 @@ jobs:
           command: |
             mkdir -p docs/_build/html/
             touch docs/_build/html/.nojekyll
-      - run:
-          name: Install gh-pages
-          command: sudo npm install -g --silent gh-pages@2.0.1
       - attach_workspace:
           at: docs/
       - run:
