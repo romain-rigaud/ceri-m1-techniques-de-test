@@ -28,6 +28,10 @@ jobs:
       - run:
           name: Generate Javadoc
           command: javadoc src/main/java/fr/univavignon/pokedex/api/* -d docs
+      - persist_to_workspace:
+          root: .
+          paths:
+            - docs
   docs-deploy:
     docker:
       - image: node:8.10.0
@@ -52,12 +56,6 @@ jobs:
           command: gh-pages --dotfiles --message "[skip ci] Updates" --dist docs/
 workflows:
   version: 2
-  maven_test:
-    jobs:
-      - build:
-          filters:
-            branches:
-              only: master
   build:
     jobs:
       - build:
