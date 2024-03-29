@@ -62,10 +62,10 @@ workflows:
               only: master
   build:
     jobs:
-      - docs-build
-      - docs-deploy:
-          requires:
-            - docs-build
+      - build:
           filters:
             branches:
               only: master
+      - docs-deploy:
+          requires:
+            - build
