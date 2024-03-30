@@ -10,6 +10,5 @@
         <module name="EmptyBlock"/>
         <module name="MethodName"/>
         <module name="ParameterName"/>
-        <module name="Indentation"/>
     </module>
 </module>
