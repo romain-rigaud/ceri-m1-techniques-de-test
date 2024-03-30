@@ -7,6 +7,9 @@
     <module name="TreeWalker">
         <module name="AvoidStarImport"/>
         <module name="ConstantName"/>
+        <module name="EmptyBlock"/>
+        <module name="MethodName"/>
+        <module name="ParameterName"/>
+        <module name="Indentation"/>
     </module>
-    <module name="EmptyBlock"/>
 </module>
