@@ -7,3 +7,9 @@
 [Visualiser la documentation](https://romain-rigaud.github.io/ceri-m1-techniques-de-test/)
 
 #### Rigaud Romain, groupe 2 alternance ILSEN
+
+### L'implémentation de RocketPokemonFactory de la Team Rocket a de nombreux problèmes :
+
+- il y a des pokémon précréé avec des index négatifs
+- les valeurs sont choisit au hasard
+- possibilité d'index négatif donnée pour la création d'un pokemon
