@@ -10,6 +10,6 @@
 
 ### L'implémentation de RocketPokemonFactory de la Team Rocket a de nombreux problèmes :
 
-- il y a des pokémon précréé avec des index négatifs
-- les valeurs sont choisit au hasard
-- possibilité d'index négatif donnée pour la création d'un pokemon
+- il y a des pokémon pré créé avec des index négatifs et possibilités de créer un Pokémon avec un index supérieur à 150.
+- les valeurs sont choisies au hasard.
+- possibilité d'index négatif donnée pour la création d'un Pokémon
